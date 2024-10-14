@@ -1,0 +1,257 @@
+/*styling for product.php*/
+
+
+.container {
+    height:100%;
+    max-width:100;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right:100px;
+    background-color: rgb(243, 190, 190);
+    
+}
+
+
+h1 {
+    font-size: 24px;
+    color:#333;
+}
+
+.product-list {
+    display:flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-bottom: 200px;
+   
+
+}
+
+.product-item {
+    position:relative;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 25px;
+    width: calc(33.333% - 40px); /* Three items per row */
+    box-sizing: border-box;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    
+}
+
+.product-item:hover {
+    transform: translateY(-10px); /* Float effect */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Light shadow */
+    cursor: pointer;
+}
+
+
+
+.product-item h2 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.product-item p {
+    margin: 0 0 10px;
+    color: #666;
+    font-size: 15px;
+}
+
+.product-item p:last-child {
+    font-weight: bold;
+    color: #333;
+}
+
+.product-images {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.product-images img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s ease;
+}
+
+.default-img {
+    opacity: 1;
+}
+
+.hover-img {
+    opacity: 0;
+}
+
+.product-item:hover .default-img {
+    opacity: 0;
+}
+
+.product-item:hover .hover-img {
+    opacity: 1;
+}
+
+
+
+.product-item:hover .add-to-cart {
+    opacity: 1;
+}
+
+
+/* Modal container */
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 800px; /* Max width for larger screens */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+.modal-body {
+    display: flex;
+    align-items: flex-start; /* Align items at the start of the container */
+    margin-bottom: 20px; /* Space below the image section */
+    z-index: 1000;
+}
+
+/* Modal Image */
+.modal-image {
+    width: 300px; /* Adjust width as needed */
+    height: auto; /* Keep the aspect ratio */
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    border: 2px solid #ccc; /* Light border */
+    border-radius: 8px; /* Rounded corners for image */
+    margin-bottom: 20px; /* Space below the image */
+   
+}
+
+.color1{
+    background-color: rgb(255, 245, 238);
+}
+
+
+/* Thumbnails */
+.image-thumbnails {
+    display: flex;
+    flex-direction: column; /* Stack thumbnails vertically */
+    align-items: center; /* Center thumbnails horizontally */
+}
+
+.thumbnail {
+    width: 100px; /* Adjust thumbnail width as needed */
+    height: auto; /* Keep the aspect ratio */
+    cursor: pointer;
+    border: 2px solid #888; /* Border color for thumbnails */
+    border-radius: 4px; /* Slightly rounded corners for thumbnails */
+    margin: 0 5px; /* Space between thumbnails */
+}
+
+.thumbnail:hover {
+    border-color: #555; /* Darker border on hover */
+}
+
+/* Title and Text */
+.modal-title {
+    font-size: 24px; /* Larger title font size */
+    font-weight: bold; /* Bold title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.modal-intro, .modal-price, .modal-description, .modal-ingredients, .modal-howto {
+    font-size: 16px; /* Adjust as needed */
+    margin-bottom: 10px; /* Space below each section */
+}
+
+.modal-price,.modal-ingredients, .modal-howto{
+    font-weight: bold;
+    
+}
+
+
+
+.modal-title {
+    color: #333; /* Dark color for the title */
+}
+
+
+.modal-intro, .modal-price, .modal-description, .modal-ingredients, .modal-howto {
+    color: #000; /* Black color for content */
+}
+
+.modal-howto{
+    padding-bottom:15px;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.add-to-cart {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+    width: 100%; /* Full width of the modal-content */
+}
+
+.add-to-cart button {
+    background-color: transparent; /* Transparent background */
+    color: #333; /* Dark color for the text */
+    border: 2px solid #333; /* Dark border */
+    padding: 10px 20px; /* Padding around the text */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Slightly larger font */
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transition for hover effects */
+    white-space: nowrap; /* Prevent text from wrapping */
+    display: inline-flex;
+    align-items: center; /* Align text and arrow */
+    justify-content: center; /* Center text and arrow */
+}
+
+.add-to-cart button::after {
+    content: '→'; /* Arrow symbol */
+    margin-left: 5px; /* Space between text and arrow */
+    transition: margin-left 0.3s ease; /* Smooth transition for arrow movement */
+}
+
+
+.add-to-cart button:hover::after {
+    margin-left: 10px; /* Move arrow slightly to the right on hover */
+}
+
+
+
